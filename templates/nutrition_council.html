@@ -1,0 +1,188 @@
+{% block head %}
+    <style>
+      /* General body styling */
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f7f6;
+          margin: 0;
+          padding: 0;
+          color: #333;
+      }
+
+      /* Centered and stylish title */
+      .title {
+          text-align: center;
+          margin-top: 50px;
+          font-size: 36px;
+          color: #333;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          padding: 10px;
+      }
+      
+      /* Grid container for images */
+      .d-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+          gap: 20px;
+          padding: 20px;
+      }
+      
+      /* Styling for each workout card */
+      .workout-card {
+          background-color: #fff;
+          padding: 15px;
+          border-radius: 12px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          text-align: center;
+          overflow: hidden;
+      }
+      
+      /* Styling for workout images */
+      .workout-img {
+          width: 100%;
+          max-height: 200px; /* Limit the height to 200px */
+          height: auto; /* Maintain aspect ratio */
+          object-fit: cover; /* Ensure the image covers the container */
+          border-radius: 8px;
+          transition: transform 0.3s ease-in-out;
+      }
+      
+      /* Hover effect for workout card */
+      .workout-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Hover effect for workout images */
+      .workout-img:hover {
+          transform: scale(1.05);
+          opacity: 0.85;
+          cursor: pointer;
+      }
+      
+      /* Title for each workout category */
+      .workout-title {
+          text-align: center;
+          font-size: 24px;
+          margin-bottom: 20px;
+          color: #333;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: bold;
+          color: #4CAF50;
+      }
+
+      /* Responsive styling for small screens */
+      @media screen and (max-width: 768px) {
+          .d-grid {
+              grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* More compact grid for small screens */
+          }
+
+          .workout-card {
+              padding: 12px;
+          }
+
+          .workout-title {
+              font-size: 20px; /* Smaller title on small screens */
+          }
+      }
+      
+      /* Add a smooth fade-in effect when the page loads */
+      .workout-card {
+          opacity: 0;
+          animation: fadeIn 1s forwards;
+      }
+
+      /* Keyframes for fade-in animation */
+      @keyframes fadeIn {
+          0% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="title">
+        <h1>Meal Plan Guides</h1>
+    </div>
+
+    <h5 class="workout-title">Obese</h5>
+    <div class="d-grid gap-2">
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/originals/1f/83/db/1f83db1f8975ded858b9e213a9e52e33.png">
+                <img class="workout-img" src="https://i.pinimg.com/originals/1f/83/db/1f83db1f8975ded858b9e213a9e52e33.png" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/43/2f/45/432f45e761172be45cb91b337f00e67e.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/43/2f/45/432f45e761172be45cb91b337f00e67e.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/0b/ca/79/0bca79252a38c93b0943690da3472a76.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/0b/ca/79/0bca79252a38c93b0943690da3472a76.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/74/40/c3/7440c3cb37a5e3e92fb8d38f6f68b53f.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/74/40/c3/7440c3cb37a5e3e92fb8d38f6f68b53f.jpg" alt="workout">
+            </a>
+        </div>
+    </div>
+
+    <h5 class="workout-title">Weight Loss</h5>
+    <div class="d-grid gap-2">
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/dd/54/31/dd54313b5e36e157a7bc519c3ff6f960.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/dd/54/31/dd54313b5e36e157a7bc519c3ff6f960.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/4e/e2/6c/4ee26ccd5e42a76ddc7eec0823f817d8.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/4e/e2/6c/4ee26ccd5e42a76ddc7eec0823f817d8.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/88/21/61/882161ef77599b4a1ee17a27e9f989cd.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/88/21/61/882161ef77599b4a1ee17a27e9f989cd.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/a0/6e/24/a06e24890459cf8a255b6dde043ced99.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/a0/6e/24/a06e24890459cf8a255b6dde043ced99.jpg" alt="workout">
+            </a>
+        </div>
+    </div>
+
+    <h5 class="workout-title">Weight Gain</h5>
+    <div class="d-grid gap-2">
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/a1/09/03/a10903ab1bab9152b0b431eb069d8a27.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/a1/09/03/a10903ab1bab9152b0b431eb069d8a27.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/18/f1/a4/18f1a4e5bb6d931ea7eae8bb79036804.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/18/f1/a4/18f1a4e5bb6d931ea7eae8bb79036804.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/3a/9d/75/3a9d757e4b029eaef93d93e0fc60dfda.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/3a/9d/75/3a9d757e4b029eaef93d93e0fc60dfda.jpg" alt="workout">
+            </a>
+        </div>
+        <div class="workout-card">
+            <a target="_parent" href="https://i.pinimg.com/736x/77/b9/d7/77b9d7598c4091983cbba5c89820ad5b.jpg">
+                <img class="workout-img" src="https://i.pinimg.com/736x/77/b9/d7/77b9d7598c4091983cbba5c89820ad5b.jpg" alt="workout">
+            </a>
+        </div>
+    </div>
+{% endblock %}

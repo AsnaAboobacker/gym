@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+  /* General body styling */
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+  }
+
+  /* Page title */
+  .title {
+      text-align: center;
+      margin: 40px 0 20px;
+      font-size: 32px;
+      color: #222;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+
+  /* Grid container for posters */
+  .d-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+  }
+
+  /* Poster styling */
+  .workout-card {
+      overflow: hidden;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Poster hover effect */
+  .workout-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Image styling for posters */
+  .workout-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: opacity 0.3s ease;
+  }
+
+  /* Dim effect on hover */
+  .workout-card:hover .workout-img {
+      opacity: 0.9;
+  }
+
+  /* Small screen responsiveness */
+  @media screen and (max-width: 768px) {
+      .title {
+          font-size: 28px;
+      }
+  }
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="title">
+    <h1>Wellness Programs</h1>
+</div>
+
+<!-- Updated grid container -->
+<div class="d-grid">
+    <div class="workout-card">
+        <a target="_parent" href="https://i.pinimg.com/736x/e5/6b/ae/e56bae60bbbdc320ab9209578bdd409b.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/736x/e5/6b/ae/e56bae60bbbdc320ab9209578bdd409b.jpg" alt="workout">
+        </a>
+    </div>
+    <div class="workout-card">
+        <a target="_parent" href="https://i.pinimg.com/736x/df/cd/ef/dfcdefb2a792421e3ae83c5eb7ef4999.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/736x/df/cd/ef/dfcdefb2a792421e3ae83c5eb7ef4999.jpg" alt="workout">
+        </a>
+    </div>
+    <div class="workout-card">
+        <a target="_parent" href="https://i.pinimg.com/736x/67/ac/ae/67acaed440273f1860cf1e05854ae0bb.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/736x/67/ac/ae/67acaed440273f1860cf1e05854ae0bb.jpg" alt="workout">
+        </a>
+    </div>
+    <div class="workout-card">
+        <a target="_parent" href="https://i.pinimg.com/736x/4d/80/54/4d80549a3273a34ef9c31539f21e3be3.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/736x/4d/80/54/4d80549a3273a34ef9c31539f21e3be3.jpg" alt="workout">
+        </a>
+    </div>
+    <div class="workout-card">
+        <a target="_parent" href="https://i.pinimg.com/736x/9d/9e/1c/9d9e1cadbbe7e492261cfcd7fa217d8d.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/736x/9d/9e/1c/9d9e1cadbbe7e492261cfcd7fa217d8d.jpg" alt="workout">
+        </a>
+    </div>
+
+</div>
+{% endblock %}

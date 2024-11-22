@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Centered page title */
+        h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        /* Form styling */
+        .form-control {
+            width: 250px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        
+        .form-control:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            border: none;
+        }
+        
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+        
+        /* Button layout */
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        form .btn {
+            margin-left: 10px;
+        }
+        
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+        }
+        
+        th {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #e8f5e9;
+        }
+        
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Empty row if no records */
+        td[colspan="6"] {
+            text-align: center;
+            font-style: italic;
+            color: #999;
+        }
+        
+        /* User-specific header styling */
+        h3 {
+            font-size: 2rem;
+          color: #6e4e2e; /* Dark beige-brown */
+          margin-bottom: 20px;
+        }
+        
+        /* Responsive styling for smaller screens */
+        @media screen and (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        
+            th, td {
+                font-size: 14px;
+            }
+        
+            /* Button Styling */
+.btn {
+    padding: 8px 20px;  /* Reduce padding for a more compact button */
+    font-size: 14px;    /* Adjust font size for better fit */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+    display: inline-block;  /* Ensures button doesn't stretch out */
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+/* Button layout inside forms */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form .btn {
+    margin-left: 10px;
+    margin-right: 10px;  /* Optional: add margin for better spacing between buttons */
+}
+
+/* Adjust button width in smaller screens */
+@media screen and (max-width: 768px) {
+    .btn {
+        padding: 8px 15px; /* Adjust padding on smaller screens */
+        font-size: 14px;
+    }
+}
+
+        }
+        
+    </style>
+{% endblock %}
+
+{% block body %}
+
+
+
+<form method="get" action="{% url 'trainer_dashboard' %}" class="mb-4">
+    <input
+      type="text"
+      name="username"
+      value="{{ searched_username }}"
+      placeholder="Enter User Name"
+      class="form-control"
+    />
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+</form>
+<form method="get" action="{% url 'delete_users' %}">
+    <button type="submit" class="btn btn-primary mt-2">View All Members</button>
+</form>
+
+{% if user %}
+    <h3>Fitness Records for User: {{ user.username }}</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>BMI</th>
+                <th>Category</th>
+                <th>Date Recorded</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if fitness_records %}
+                {% for record in fitness_records %}
+                    <tr>
+                        <td>{{ record.user.username }}</td>
+                        <td>{{ record.height }}</td>
+                        <td>{{ record.weight }}</td>
+                        <td>{{ record.bmi }}</td>
+                        <td>{{ record.category }}</td>
+                        <td>{{ record.date_recorded|date:"Y-m-d H:i" }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="6">No fitness records found for this user.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endif %}
+
+{% endblock %}

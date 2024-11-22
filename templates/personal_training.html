@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <style>
+      /* General styling */
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f7f6;
+          margin: 0;
+          padding: 0;
+          color: #333;
+      }
+      
+      /* Centered and stylish title */
+      .title {
+          text-align: center;
+          margin-top: 50px;
+          font-size: 36px;
+          color: #333;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+      }
+      
+      /* Grid container for images */
+      .d-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+          gap: 20px;
+          padding: 20px;
+      }
+      
+      /* Styling for each workout card */
+      .workout-card {
+          background-color: #fff;
+          padding: 15px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+          text-align: center;
+      }
+      
+      /* Styling for workout images */
+      .workout-img {
+          width: 100%;
+          max-height: 200px;   /* Limit the height to 200px */
+          height: auto;         /* Keep aspect ratio */
+          object-fit: cover;    /* Ensure the image covers the container */
+          border-radius: 8px;
+          transition: transform 0.3s ease-in-out;
+      }
+      
+      /* Hover effect for workout card */
+      .workout-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Hover effect for workout images */
+      .workout-img:hover {
+          transform: scale(1.05);
+          cursor: pointer;
+      }
+      
+      /* Title for each workout image */
+      .workout-title {
+          text-align: center;
+          font-size: 24px;
+          margin-bottom: 15px;
+          color: #333;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+      }
+      
+      /* Smooth hover transition for images */
+      .workout-img:hover {
+          opacity: 0.8;
+      }
+      
+
+    </style>
+    {% endblock %}
+    
+
+{% block body %}
+   
+   <div class="d-grid gap-2">
+    <div class="workout-card">
+        <h3 class="workout-title">Dumb Bell</h3>
+        <a target="_parent" href="https://www.printablee.com/postpic/2021/06/printable-dumbbell-exercise-chartn_1590.jpg">
+            <img class="workout-img" src="https://www.printablee.com/postpic/2021/06/printable-dumbbell-exercise-chartn_1590.jpg" alt="workout">
+        </a>
+    </div>
+
+    <div class="workout-card">
+        <h3 class="workout-title">BarBell</h3>
+        <a target="_parent" href="https://i.pinimg.com/originals/96/53/80/96538051d4b7c207d06d0ad3c5ac1713.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/originals/96/53/80/96538051d4b7c207d06d0ad3c5ac1713.jpg" alt="workout">
+        </a>
+    </div>
+
+    <div class="workout-card">
+        <h3 class="workout-title">Treadmill</h3>
+        <a target="_parent" href="https://i.pinimg.com/originals/28/9b/4d/289b4d2356f82c4df10adbe707678d57.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/originals/28/9b/4d/289b4d2356f82c4df10adbe707678d57.jpg" alt="workout">
+        </a>
+    </div>
+
+    <div class="workout-card">
+        <h3 class="workout-title">Bench Press</h3>
+        <a target="_parent" href="https://th.bing.com/th/id/OIP.tflXcgWVHBfhpg6TwvV5_gHaHa?rs=1&pid=ImgDetMain">
+            <img class="workout-img" src="https://th.bing.com/th/id/OIP.tflXcgWVHBfhpg6TwvV5_gHaHa?rs=1&pid=ImgDetMain" alt="workout">
+        </a>
+    </div>
+
+    <div class="workout-card">
+        <h3 class="workout-title">Kettlebell</h3>
+        <a target="_parent" href="https://i.pinimg.com/originals/47/48/e1/4748e12bb63a258a8ffb463d2624b165.jpg">
+            <img class="workout-img" src="https://i.pinimg.com/originals/47/48/e1/4748e12bb63a258a8ffb463d2624b165.jpg" alt="workout">
+        </a>
+    </div>  
+
+    <div class="workout-card">
+      <h3 class="workout-title">cables and pulleys</h3>
+      <a target="_parent" href="https://th.bing.com/th/id/OIP.ymvNLNZKUF1hPlGiOO-GNQAAAA?rs=1&pid=ImgDetMain">
+          <img class="workout-img" src="https://th.bing.com/th/id/OIP.ymvNLNZKUF1hPlGiOO-GNQAAAA?rs=1&pid=ImgDetMain" alt="workout">
+      </a>
+   
+</div>
+{% endblock body %}

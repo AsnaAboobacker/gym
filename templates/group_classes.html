@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}
+Group Classes
+{% endblock title %}
+
+{% block head %}
+<style>
+  /* General styling for the body */
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+  }
+
+  /* Page title styling */
+  .title {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 32px;
+      color: #222;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+
+  /* Grid container for posters */
+  .d-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusts columns responsively */
+      gap: 20px;
+      padding: 20px;
+  }
+
+  /* Poster container */
+  .workout-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect for the card */
+  .workout-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Poster image styling */
+  .workout-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.4s ease;
+  }
+
+  /* Zoom effect on image hover */
+  .workout-card:hover .workout-img {
+      transform: scale(1.1);
+  }
+
+  /* Button container */
+  .workout-card .button-container {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+  }
+
+  /* Button visibility on hover */
+  .workout-card:hover .button-container {
+      opacity: 1;
+  }
+
+  /* Button styling */
+  .download-btn {
+      display: inline-block;
+      background-color: #4caf50;
+      color: #fff;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .download-btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.1);
+  }
+
+  /* Responsive styling */
+  @media screen and (max-width: 768px) {
+      .title {
+          font-size: 24px;
+      }
+
+      .download-btn {
+          padding: 8px 16px;
+          font-size: 12px;
+      }
+  }
+</style>
+{% endblock head %}
+
+{% block body %}
+<div class="title">
+    <h1>Challenge Sheets</h1>
+</div>
+
+<div class="d-grid">
+    <div class="workout-card">
+        <img class="workout-img" src="https://i.pinimg.com/736x/c5/8b/18/c58b1844257d9e57796f339ad0a32eb7.jpg" alt="Wellness Poster 1">
+        <div class="button-container">
+            <a class="download-btn" href="https://i.pinimg.com/736x/c5/8b/18/c58b1844257d9e57796f339ad0a32eb7.jpg" download="wellness_program1.jpg">Download</a>
+        </div>
+    </div>
+    <div class="workout-card">
+        <img class="workout-img" src="https://i.pinimg.com/736x/5d/fa/92/5dfa92e6478c8d07d124e271ed1b14f5.jpg" alt="Wellness Poster 2">
+        <div class="button-container">
+            <a class="download-btn" href="https://i.pinimg.com/736x/5d/fa/92/5dfa92e6478c8d07d124e271ed1b14f5.jpg" download="wellness_program2.jpg">Download</a>
+        </div>
+    </div>
+    <div class="workout-card">
+        <img class="workout-img" src="https://i.pinimg.com/736x/ba/23/f1/ba23f1a49b6c9213de6b3f1475b2847c.jpg" alt="Wellness Poster 3">
+        <div class="button-container">
+            <a class="download-btn" href="https://i.pinimg.com/736x/ba/23/f1/ba23f1a49b6c9213de6b3f1475b2847c.jpg" download="wellness_program3.jpg">Download</a>
+        </div>
+    </div>
+    <div class="workout-card">
+        <img class="workout-img" src="https://i.pinimg.com/736x/34/cd/d3/34cdd31a4beb0f348e05250691747e1e.jpg" alt="Wellness Poster 4">
+        <div class="button-container">
+            <a class="download-btn" href="https://i.pinimg.com/736x/34/cd/d3/34cdd31a4beb0f348e05250691747e1e.jpg" download="wellness_program4.jpg">Download</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock body %}

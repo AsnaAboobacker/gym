@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+  /* General body styling */
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+  }
+
+  /* Page title */
+  .title {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 36px;
+      color: #4CAF50;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+  }
+
+  /* Add hover effect to title */
+  .title:hover {
+      color: #ff5722;
+  }
+
+  /* Vision content section */
+  .vision-content {
+      max-width: 850px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hover effect on vision content */
+  .vision-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  .vision-content h2 {
+      font-size: 30px;
+      color: #009688;
+      font-weight: bold;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+
+  /* Styling the vision paragraph */
+  .vision-content p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      font-weight: 300;
+      text-align: justify;
+      margin-bottom: 25px;
+      padding: 0 20px;
+      transition: color 0.3s ease;
+  }
+
+  /* Hover effect for paragraph */
+  .vision-content p:hover {
+      color: #666;
+  }
+
+  /* Button styling */
+  .vision-content .back-btn {
+      display: inline-block;
+      background-color: #ff5722;
+      color: #fff;
+      padding: 15px 25px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 50px;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hover effect on the button */
+  .vision-content .back-btn:hover {
+      background-color: #e64a19;
+      transform: translateY(-4px);
+  }
+
+  /* Responsive styling */
+  @media screen and (max-width: 768px) {
+      .title {
+          font-size: 28px;
+      }
+
+      .vision-content {
+          padding: 20px;
+          margin: 30px 10px;
+      }
+
+      .vision-content h2 {
+          font-size: 24px;
+      }
+
+      .vision-content p {
+          font-size: 16px;
+      }
+
+      .vision-content .back-btn {
+          font-size: 16px;
+          padding: 12px 20px;
+      }
+  }
+
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="title">
+    <h1>Our Vision</h1>
+</div>
+
+<!-- Vision content section -->
+<div class="vision-content">
+   
+    <p>At our gym, we envision a community where individuals of all fitness levels come together to prioritize their health and well-being. We are dedicated to empowering you to achieve your personal fitness goals by providing not only state-of-the-art equipment and expert guidance but also innovative tools to support your journey. Our BMI calculator allows you to track and assess your body’s health metrics, while our fitness tracker helps you monitor your progress in real-time, ensuring every step of your workout is optimized. We offer a variety of wellness programs designed to nourish both the body and the mind, creating a holistic approach to health. Our engaging events and dynamic group classes foster a supportive environment, promoting camaraderie and motivation. Whether you are new to fitness or a seasoned athlete, our vision is to create a space where you can grow stronger, healthier, and more confident, together with like-minded individuals.</p>
+
+</div>
+{% endblock %}

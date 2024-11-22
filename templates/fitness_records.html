@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style>
+/* Scoped styles to avoid conflicts */
+.fitness-record-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 100px auto 20px auto; /* Added top margin to prevent overlap with navbar */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.fitness-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.fitness-table thead tr {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.fitness-table th,
+.fitness-table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .fitness-record-container {
+        padding: 15px;
+    }
+
+    .fitness-table th, .fitness-table td {
+        font-size: 0.9rem;
+    }
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="fitness-record-container">
+    <h1>Your Fitness Records</h1>
+    <table class="fitness-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Height (cm)</th>
+                <th>Weight (kg)</th>
+                <th>BMI</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+                <tr>
+                    <td>{{ record.date_recorded|date:"Y-m-d H:i" }}</td>
+                    <td>{{ record.height }}</td>
+                    <td>{{ record.weight }}</td>
+                    <td>{{ record.bmi }}</td>
+                    <td>{{ record.category }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">No fitness records found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'bmi_calculator' %}">Calculate New BMI</a>
+</div>
+{% endblock %}

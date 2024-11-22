@@ -1,0 +1,196 @@
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{% block title %}
+
+
+{% endblock title %}
+{% block head %}
+      <style>
+        /* General body styling */
+      body {
+          font-family: 'Arial', sans-serif;
+          background: linear-gradient(135deg, #f7e7ce, #f1d5b5); /* Soft yellow-beige gradient */
+          color: #333;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+      }
+
+      /* Center container styling */
+      .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          max-width: 400px;
+          background: rgba(241, 213, 181, 0.9); /* Translucent yellow-beige background */
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+          text-align: center;
+      }
+
+      /* Header styling */
+      h1 {
+          font-size: 2rem;
+          color: #6e4e2e; /* Dark beige-brown */
+          margin-bottom: 20px;
+      }
+
+      /* Input fields styling */
+      input {
+          width: 100%;
+          padding: 10px;
+          margin: 15px 0;
+          border: 2px solid #d9b99b;
+          border-radius: 5px;
+          font-size: 1rem;
+          outline: none;
+          background: #fff;
+          color: #333;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      input:focus {
+          border-color: #cfa77d; /* Accent beige tone */
+          box-shadow: 0 0 8px rgba(207, 167, 125, 0.8);
+      }
+
+      /* Labels styling */
+      label {
+          display: block;
+          font-size: 0.9rem;
+          text-align: left;
+          margin-top: -10px;
+          color: #6e4e2e; /* Dark beige-brown */
+          transition: color 0.3s ease;
+      }
+
+      input:focus + label {
+          color: #cfa77d; /* Accent beige tone */
+      }
+
+      /* Button styling */
+      button {
+          background: #cfa77d; /* Warm beige */
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          font-size: 1rem;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 10px;
+          transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+          background: #b68e63; /* Slightly darker beige */
+          transform: scale(1.05);
+      }
+
+      button:active {
+          transform: scale(0.95);
+      }
+
+      /* Link styling */
+      a {
+          color: #6e4e2e; /* Accent beige tone */
+          text-decoration: none;
+          font-size: 0.9rem;
+          margin-top: 15px;
+          display: inline-block;
+          transition: color 0.3s ease;
+      }
+
+      a:hover {
+          color: #b68e63; /* Slightly darker beige */
+      }
+
+      /* Alert message styling */
+      .alert {
+          font-size: 0.9rem;
+          border-radius: 5px;
+          background: rgba(255, 235, 204, 0.9); /* Soft pastel yellow */
+          color: #6e4e2e; /* Dark beige-brown */
+          border: 1px solid #d9b99b;
+      }
+
+      /* Responsive design for smaller devices */
+      @media (max-width: 500px) {
+          .container {
+              padding: 20px;
+          }
+
+          h1 {
+              font-size: 1.5rem;
+          }
+
+          input {
+              font-size: 0.9rem;
+          }
+
+          button {
+              font-size: 0.9rem;
+          }
+      }
+
+
+      </style>
+
+{% endblock %}
+{% block body %}     
+     
+  <div class="container mt-2">
+
+        <div class="row">
+        
+        <div class="col-md-3"> </div>
+        
+        <div class="col-md-6">
+        
+        
+          {% for message in messages %}
+          <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong></strong> {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+        <div class="form"> 
+          <h1>
+            LOGIN
+        </h1> 
+          
+            <form method="post">
+                {% csrf_token %}
+                <div>
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" required>
+                    
+                </div>
+                <div>
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" required>
+                    
+                </div>
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+          <br><a href="/signup">New User?</a>
+        
+        
+        </div>
+        
+        <div class="col-md-3"></div>
+        
+        </div>
+        
+        
+  </div>
+    
+{% endblock %}
+

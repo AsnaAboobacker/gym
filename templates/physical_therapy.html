@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+  /* General body styling */
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+  }
+
+  /* Title Styling */
+  .title {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 36px;
+      color: #4CAF50;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+  }
+
+  /* Subtitle Styling */
+  .subtitle {
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+  }
+
+  /* Group classes section */
+  .classes-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* This ensures auto-adjustment for different numbers of cards */
+      gap: 20px;
+      padding: 0 20px;
+  }
+
+  /* Individual class card */
+  .class-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Hover effect on the class card */
+  .class-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .class-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+  }
+
+  .class-card h3 {
+      margin: 15px 0;
+      color: #009688;
+      font-size: 22px;
+  }
+
+  .class-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+  }
+
+  .join-btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .join-btn:hover {
+      background-color: #388e3c;
+      transform: translateY(-4px);
+  }
+
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+      .title {
+          font-size: 28px;
+      }
+
+      .subtitle {
+          font-size: 18px;
+      }
+
+      .class-card h3 {
+          font-size: 20px;
+      }
+
+      .join-btn {
+          font-size: 14px;
+          padding: 10px 16px;
+      }
+  }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="title">
+    <h1>Join Our Group Classes</h1>
+</div>
+<div class="subtitle">
+    <p>Explore our exciting virtual fitness classes and join from the comfort of your home. Simply click on the class link to get started!</p>
+</div>
+
+<!-- Group Classes Section -->
+<div class="classes-container">
+
+    <!-- Class 1 -->
+    <div class="class-card">
+        <img src="https://i.pinimg.com/736x/74/76/67/747667dddc1a755ca6438df4cfa532a9.jpg" alt="Yoga Class">
+        <h3>Morning Yoga</h3>
+        <p>Start your day with a calming and rejuvenating yoga session to improve flexibility, strength, and mindfulness.</p>
+        <a href="https://meet.google.com/vfj-rozj-dij" class="join-btn" target="_blank">Join Class</a>
+    </div>
+
+    <!-- Class 2 -->
+    <div class="class-card">
+        <img src="https://i.pinimg.com/736x/3d/9b/bc/3d9bbcda53a34e2a0738118e7f9037e1.jpg" alt="Strength Training">
+        <h3>Strength Training</h3>
+        <p>Build muscle and enhance your endurance with targeted strength workouts designed to sculpt and tone your body.</p>
+        <a href="https://meet.google.com/dug-gsrn-tew " class="join-btn" target="_blank">Join Class</a>
+    </div>
+    
+
+    <!-- Class 3 -->
+    <div class="class-card">
+        <img src="https://i.pinimg.com/236x/61/5f/5d/615f5d85af12d29c736626fc230caa1c.jpg" alt="HIIT Class">
+        <h3>High-Intensity Interval Training (HIIT)</h3>
+        <p>Get your heart pumping and burn calories with this intense, fast-paced workout that combines cardio and strength training.</p>
+        <a href="https://meet.google.com/ygz-rjqq-ncw" class="join-btn" target="_blank">Join Class</a>
+    </div>
+
+    <!-- Class 4 -->
+    <div class="class-card">
+        <img src="https://i.pinimg.com/736x/92/8c/04/928c04e46fb9c1ec975f1d3cb4ac6af5.jpg" alt="Zumba Class">
+        <h3>Zumba Dance Fitness</h3>
+        <p>Join us for an energetic and fun dance class that combines Latin rhythms with easy-to-follow moves for a full-body workout.</p>
+        <a href="https://meet.google.com/ces-vmqs-pvo " class="join-btn" target="_blank">Join Class</a>
+    </div>
+
+    <!-- Class 5 -->
+    <div class="class-card">
+        <img src="https://i.pinimg.com/736x/ed/ca/53/edca537344f1b8db004c90c001184549.jpg" alt="Pilates Class">
+        <h3>Pilates</h3>
+        <p>Enhance your core strength, flexibility, and posture with Pilates exercises that target the deep muscles of your body.</p>
+        <a href="https://meet.google.com/xtn-kkts-dpt" class="join-btn" target="_blank">Join Class</a>
+    </div>
+
+</div>
+{% endblock %}
