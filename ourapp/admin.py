@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth import get_user_model
-from .models import UserProfile
+from .models import UserProfile, Trainer
 
 User = get_user_model()
 
@@ -31,3 +31,6 @@ except admin.sites.NotRegistered:
 
 # Register the custom User admin
 admin.site.register(User, CustomUserAdmin)
+
+# Register the Trainer
+admin.site.register(Trainer)

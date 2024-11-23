@@ -109,6 +109,7 @@ ul li {
     </style>    
 {%endblock%}
 {% block body%}
+
  <div class="form">
         <h2>Trainer Login</h2>
         <form method="post">
@@ -119,8 +120,6 @@ ul li {
             <input type="password" name="password" id="password" required><br>
             <button type="submit">Login</button>
         </form>
-
-    </div>
     {% if messages %}
         <ul>
             {% for message in messages %}
@@ -128,4 +127,5 @@ ul li {
             {% endfor %}
         </ul>
     {% endif %}
+    </div>
 {%endblock%}

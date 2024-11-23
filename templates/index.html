@@ -59,21 +59,22 @@
             </ul>
           </li> {% endcomment %}
           {% comment %} <li><a href="/achivements">Gym Awards</a></li> {% endcomment %}
+
+
+          {% if user.is_authenticated %}
+            <a class="btn-getstarted" href="{% url 'handlelogout' %}">LOG OUT</a>
+          {% else %}
+            <a class="btn-getstarted" href="{% url 'handlelogin' %}">LOGIN / SIGNUP</a>
+            <a class="btn-getstarted" href="/admin/">ADMIN</a>
+            <a class="btn-getstarted" href="{% url 'trainer_login'%}">TRAINER</a>
+          {% endif %}
+
         </ul>
 
         {% comment %} {%if not request.user.is_authenticated%} {% endcomment %}
 
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        {% comment %} <i class="mobile-nav-toggle d-xl-none bi bi-list"></i> {% endcomment %}
       </nav>
-
-      {% if user.is_authenticated %}
-        <a class="btn-getstarted" href="{% url 'handlelogout' %}">LOG OUT</a>
-      {% else %}
-        <a class="btn-getstarted" href="{% url 'signup' %}">SIGN UP</a>
-      {% endif %}
-      <a class="btn-getstarted" href="/admin/">ADMIN</a>
-
-      <a class="btn-getstarted" href="{% url 'trainer_login'%}">TRAINER</a>
 
     </div>
   </header>

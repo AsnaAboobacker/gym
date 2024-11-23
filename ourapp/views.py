@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-from .models import FitnessRecord, User
+from .models import FitnessRecord, User, Trainer
 from django.http import HttpResponseForbidden
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import get_user_model
@@ -132,21 +132,16 @@ def fitness_records(request):
 
 def trainer_login(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None:
-            if user.is_trainer:  # Check if the user is a trainer
-                login(request, user)
-                return redirect('trainer_dashboard')  # Replace with your trainer dashboard view
-            else:
-                messages.error(request, "You are not authorized to log in as a trainer.")
-        else:
+        username = request.POST['username']
+        password = request.POST['password']
+        try:
+            trainer = Trainer.objects.get(username=username, password=password)
+            # Store trainer info in session (as an example)
+            request.session['trainer_id'] = trainer.id
+            return redirect('trainer_dashboard')  # Replace with your dashboard URL
+        except Trainer.DoesNotExist:
             messages.error(request, "Invalid username or password.")
-
-    return render(request, 'trainer_login.html')  # Replace with your trainer login template
+    return render(request, 'trainer_login.html')
 
 @login_required
 def trainer_dashboard(request):

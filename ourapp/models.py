@@ -2,7 +2,8 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 from datetime import date
-
+from django.conf import settings  # Import settings to refer to the custom User model
+from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
@@ -18,9 +19,13 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s Profile"
-# models.py
-from django.conf import settings  # Import settings to refer to the custom User model
-from django.db import models
+    
+class Trainer(models.Model):
+    username = models.CharField(max_length=150, unique=True)
+    password = models.CharField(max_length=128)  # You can hash passwords later if needed
+
+    def __str__(self):
+        return self.username
 
 class FitnessRecord(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)  # Use settings.AUTH_USER_MODEL instead of auth.User
