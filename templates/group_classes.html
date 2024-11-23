@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
 Group Classes
 {% endblock title %}
@@ -118,27 +119,27 @@ Group Classes
 
 <div class="d-grid">
     <div class="workout-card">
-        <img class="workout-img" src="https://i.pinimg.com/736x/c5/8b/18/c58b1844257d9e57796f339ad0a32eb7.jpg" alt="Wellness Poster 1">
+        <img class="workout-img" src="{% static 'assets/img/10000_steps_daily_challange.jpg' %}" alt="Wellness Poster 1">
         <div class="button-container">
-            <a class="download-btn" href="https://i.pinimg.com/736x/c5/8b/18/c58b1844257d9e57796f339ad0a32eb7.jpg" download="wellness_program1.jpg">Download</a>
+            <a class="download-btn" href="{% static 'assets/img/10000_steps_daily_challange.jpg' %}" download="">Download</a>
         </div>
     </div>
     <div class="workout-card">
-        <img class="workout-img" src="https://i.pinimg.com/736x/5d/fa/92/5dfa92e6478c8d07d124e271ed1b14f5.jpg" alt="Wellness Poster 2">
+        <img class="workout-img" src="{% static 'assets/img/30_day_dumbbell_challenge.jpg' %}" alt="Wellness Poster 2">
         <div class="button-container">
-            <a class="download-btn" href="https://i.pinimg.com/736x/5d/fa/92/5dfa92e6478c8d07d124e271ed1b14f5.jpg" download="wellness_program2.jpg">Download</a>
+            <a class="download-btn" href="{% static 'assets/img/30_day_dumbbell_challenge.jpg' %}" download>Download</a>
         </div>
     </div>
     <div class="workout-card">
-        <img class="workout-img" src="https://i.pinimg.com/736x/ba/23/f1/ba23f1a49b6c9213de6b3f1475b2847c.jpg" alt="Wellness Poster 3">
+        <img class="workout-img" src="{% static 'assets/img/30_day_squat_challenge.jpg' %}" alt="Wellness Poster 3">
         <div class="button-container">
-            <a class="download-btn" href="https://i.pinimg.com/736x/ba/23/f1/ba23f1a49b6c9213de6b3f1475b2847c.jpg" download="wellness_program3.jpg">Download</a>
+            <a class="download-btn" href="{% static 'assets/img/30_day_squat_challenge.jpg' %}" download>Download</a>
         </div>
     </div>
     <div class="workout-card">
-        <img class="workout-img" src="https://i.pinimg.com/736x/34/cd/d3/34cdd31a4beb0f348e05250691747e1e.jpg" alt="Wellness Poster 4">
+        <img class="workout-img" src="{% static 'assets/img/30_day_workout_challenge.jpg' %}" alt="Wellness Poster 4">
         <div class="button-container">
-            <a class="download-btn" href="https://i.pinimg.com/736x/34/cd/d3/34cdd31a4beb0f348e05250691747e1e.jpg" download="wellness_program4.jpg">Download</a>
+            <a class="download-btn" href="{% static 'assets/img/30_day_workout_challenge.jpg' %}" download>Download</a>
         </div>
     </div>
     
